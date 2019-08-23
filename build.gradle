@@ -1,0 +1,46 @@
+buildscript {
+  ext {
+    springBootVersion = '2.1.5.RELEASE'
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+
+  repositories {
+    mavenCentral()
+  }
+}
+
+plugins {
+  id 'org.springframework.boot' version '2.1.5.RELEASE'
+}
+
+group 'com.franklin.sample'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: "org.springframework.boot"
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile(
+      'org.springframework.shell:spring-shell-starter:2.0.1.RELEASE',
+      'org.slf4j:slf4j-api:1.7.26',
+      'ch.qos.logback:logback-classic:1.2.3',
+      'org.apache.commons:commons-lang3:3.9',
+      'com.beust:jcommander:1.72'
+  )
+  testCompile(
+      'junit:junit:4.12',
+      'org.springframework:spring-test:5.1.8.RELEASE',
+      'org.springframework.boot:spring-boot-starter-test:2.1.5.RELEASE',
+      'org.mockito:mockito-core:1.9.5',
+      'org.hamcrest:hamcrest-library:2.1',
+  )
+}
