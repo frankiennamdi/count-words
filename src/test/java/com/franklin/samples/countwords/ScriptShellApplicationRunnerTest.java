@@ -1,6 +1,5 @@
 package com.franklin.samples.countwords;
 
-import com.franklin.samples.countwords.ScriptShellApplicationRunner;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -14,7 +13,6 @@ import static com.franklin.samples.countwords.TestSupport.resourceToPath;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
-
 
 public class ScriptShellApplicationRunnerTest {
 

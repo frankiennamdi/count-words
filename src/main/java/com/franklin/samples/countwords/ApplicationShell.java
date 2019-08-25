@@ -9,6 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.shell.jline.PromptProvider;
 import org.springframework.util.StringUtils;
 
+/**
+ * Shell for the application
+ */
 @SpringBootApplication
 @ComponentScan("com.franklin.samples")
 public class ApplicationShell {

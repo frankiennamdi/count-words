@@ -18,7 +18,10 @@ class WordsCounter {
          FileReader fileToCountReader = new FileReader(fileToCount)) {
       Set<String> commonWordSet = new HashSet<>();
       final AtomicInteger longestWord = new AtomicInteger(0);
-      iteratorToStream(commonWordReader.getIterator()).forEach(commonWordSet::add);
+      iteratorToStream(commonWordReader.getIterator())
+              .map(this::splitToWordsInUsLocale)
+              .flatMap(List::stream)
+              .forEach(commonWordSet::add);
 
       return iteratorToStream(fileToCountReader.getIterator())
               .map(this::splitToWordsInUsLocale)
